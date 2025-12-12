@@ -1,0 +1,27 @@
+{
+  "functions": {
+    "api/change-owner.js": {
+      "maxDuration": 10
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/change-owner",
+      "dest": "/api/change-owner.js"
+    },
+    {
+      "src": "/api/change-owner/(.*)",
+      "dest": "/api/change-owner.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/change-owner(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+      ]
+    }
+  ]
+}
